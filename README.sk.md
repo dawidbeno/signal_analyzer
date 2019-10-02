@@ -8,6 +8,7 @@ Ako prvý sme vytvorili generátor, ktorý generuje prúd dát s podobnými vzor
 ## Generátor dát
 Tento modul aplikácie simuluje činnosť externých meracích zariadení používaných pri neurofyziologických vyšetreniach. Tieto zariadenia merajú činnosť nervov a svalov pacientov – zachytávajú nervové impulzy, ktoré sú reprezentované vlnami v grafe. Postupnosť jednotlivých vĺn a artefaktov môže používateľ ručne ovládať príkazmi. Na základe týchto príkazov sa v reálnom čase vygenerujú rôzne typy vĺn. 
 Typy generovaných vĺn:
+
 ![alt text 1](docs/img/wave1.png "wave1")
 
 Po spustení generovania signálu naživo sa otvorí okno, ktoré v reálnom čase zobrazuje priebeh merania. Pre zobrazenie grafu používame balík matplotlib.pyplot, ktorý je určený pre grafické vytváranie dvojrozmerných grafov.
@@ -15,14 +16,15 @@ Po spustení generovania signálu naživo sa otvorí okno, ktoré v reáln
 
 ## Analyzátor signálov
 Dáta z merania pacienta sú tvorené prúdom dát, pričom každý bod predstavuje nameranú hodnotu v čase. Súčasne môže prebiehať aj niekoľko meraní ale pre každé meranie sa analyzuje každý bod nezávisle od ostatných. Ak hodnota bodu presiahne prah pre nejaký hľadaný typ vlny, zisťuje sa, či sa nejedná o vrchol vlny. Analýza prebieha v troch krokoch:
+
 ![alt text 1](docs/img/diag1.jpg "diag")
 
 Po identifikovaní zaujímavého miesta v meraní, sa toto miesto vysekne a posunie sa do neurónovej siete. Následnou klasifikáciou si zistí pravdepodonosť, s akou sa jedná o správnu vlnu. 
 
-### Neurónová sieť
+## Neurónová sieť
 Pre zostrojenie klasifikátoru založeného na neurónovej sieti, sme použili knižnicu Genann. Je to malá knižnica, ktorá ale spĺňa všetky podmienky kladané na správne fungovanie malých neurónových sietí. Keďže je jednoduchá a implementovaná v jazyku C, vyznačuje sa svojou rýchlosťou.
 
-#### Trénovanie, testovanie a validácia siete
+## Trénovanie, testovanie a validácia siete
 Vytvorili sme CVS súbor s vygenerovanými snímkami vĺn. 50 000 snímok bolo správnych a 50 000 sníkoch obsahovalo len šum. Tento veľký dataset sme rozdelili do trochu poddatasetov - trénovací, testovací a validačný.
 
 Následne sme vytvárili sieť pomocou scenáru:
