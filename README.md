@@ -10,20 +10,23 @@ First we have created a generator that generates a stream of data with similar p
 ## Data generator
 This application module simulates the operation of external measuring devices used in neurophysiological examinations. These devices measure the activity of patient's nerves and muscles - they capture the nerve impulses that are represented as waves in the graph. The user can manually control the sequence of individual waves and artifacts by commands. These commands generate different types of waves in real time.
 Types of generated waves:
+
 ![alt text 1](docs/img/wave1.png "wave1")
 
 When live signal generation is started, a window opens that shows the measurement progress in real time. To display the graph we use the package *matplotlib.pyplot*, which is designed for graphical creation of two-dimensional graphs.
 
 ## Signal analyzer
 Patient measurement data is a stream of data, where each point is representing the measured value over time. Several measurements can be performed at the same time, but for each measurement each point is analyzed independently of the others. If the point value exceeds the threshold for a particular wave type, we suppose that it is the wave top. The analysis is carried out in three steps:
-![alt text 1](docs/img/diag1.jpg "diag")
+
+![alt text 1](docs/img/diag1_en.jpg "diag")
+
 
 After identifying the point of interest in the measurement, the area around it is cut out and moved into the neural network. Subsequent classification will determine the likelihood of the correct wave. 
 
-### Neural network
+## Neural network
 We used Genann library to construct neural network based classifier. It is a small library, but it fulfills all the conditions for proper functioning of small neural networks. Because it is simple and implemented in C, it is characterized by its speed.
 
-#### Network training, testing and evaluation
+## Network training, testing and evaluation
 We created a CVS file with generated waveforms. 50,000 images were correct waves and 50,000 images contained only noise. We have divided this large dataset into some subdatasets - training, testing and validation.
 
 Then we created a network using a scenario:
