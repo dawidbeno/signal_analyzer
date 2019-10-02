@@ -1,0 +1,8 @@
+<wave type="2">
+	<name>type2</name>
+	<threshold>-1000</threshold>
+	<dlzka_priebehu>30</dlzka_priebehu>
+	<th_cross>11</th_cross>
+	<ann_file>wave2.ann</ann_file>
+	<ann_topology>30;2;200;1</ann_topology>
+</wave>

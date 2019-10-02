@@ -1,0 +1,8 @@
+<wave>
+	<name>VLNA_3</name>
+	<threshold>-300</threshold>
+	<dlzka_priebehu>70</dlzka_priebehu>
+	<th_cross>42</th_cross>
+	<ann_file>wave3.ann</ann_file>
+	<ann_topology>70;2;150;1</ann_topology>
+</wave>
