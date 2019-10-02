@@ -21,7 +21,7 @@ Dáta z merania pacienta sú tvorené prúdom dát, pričom každý bod predstav
 
 Po identifikovaní zaujímavého miesta v meraní, sa toto miesto vysekne a posunie sa do neurónovej siete. Následnou klasifikáciou si zistí pravdepodonosť, s akou sa jedná o správnu vlnu. 
 
-## Neurónová sieť
+## Neurónová sieť
 Pre zostrojenie klasifikátoru založeného na neurónovej sieti, sme použili knižnicu Genann. Je to malá knižnica, ktorá ale spĺňa všetky podmienky kladané na správne fungovanie malých neurónových sietí. Keďže je jednoduchá a implementovaná v jazyku C, vyznačuje sa svojou rýchlosťou.
 
 ## Trénovanie, testovanie a validácia siete
